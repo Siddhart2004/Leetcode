@@ -1,0 +1,10 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        intvalue={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        equivalentint=0
+        for i in range(len(s)):
+            if i+1<len(s) and intvalue[s[i]]<intvalue[s[i+1]]:
+                equivalentint -=intvalue[s[i]]
+            else:
+                equivalentint += intvalue[s[i]]
+        return equivalentint
